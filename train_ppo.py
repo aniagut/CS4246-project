@@ -34,6 +34,7 @@ def run_experiment(batch_size, gamma, clip_range, n_steps):
     )
     callback = RewardTrackingCallback()
     model.learn(total_timesteps=50000, callback=callback)
+    model.save("PPO_MODEL3")
     env.close()
     return callback.episode_rewards
 
